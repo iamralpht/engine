@@ -164,8 +164,8 @@ static std::unique_ptr<PipelineT> CreateDefaultPipeline(
 ContentContext::ContentContext(std::shared_ptr<Context> context)
     : context_(std::move(context)),
       tessellator_(std::make_shared<Tessellator>()),
-      glyph_atlas_context_(std::make_shared<GlyphAtlasContext>()),
-      scene_context_(std::make_shared<scene::SceneContext>(context_)) {
+      glyph_atlas_context_(std::make_shared<GlyphAtlasContext>()) { //,
+      //scene_context_(std::make_shared<scene::SceneContext>(context_)) {
   if (!context_ || !context_->IsValid()) {
     return;
   }
